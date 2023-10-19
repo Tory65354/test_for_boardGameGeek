@@ -8,7 +8,7 @@ import org.springframework.web.client.RestTemplate;
 import java.util.List;
 
 public class TheWhiteCastleGameInformationRequester {
-    private final String API_URL = "https://boardgamegeek.com/xmlapi/boardgame/371942";
+    private final String API_URL = "https://boardgamegeek.com/xmlapi/game/371942?stats=1";
 
     public List<Information> getGameInformation() throws JsonProcessingException {
         RestTemplate restTemplate = new RestTemplate();

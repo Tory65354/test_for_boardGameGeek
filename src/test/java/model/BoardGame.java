@@ -271,4 +271,14 @@ public class BoardGame {
     public void setPoll(List<Poll> poll) {
         this.poll = poll;
     }
+
+    public List<Statistics> getStatistics() {
+        return statistics;
+    }
+
+    public void setStatistics(List<Statistics> statistics) {
+        this.statistics = statistics;
+    }
+
+    public List<Statistics> statistics;
 }

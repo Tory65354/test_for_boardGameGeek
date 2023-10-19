@@ -5,12 +5,14 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import model.Information;
+import model.Rating;
 import org.junit.Assert;
 import pages.BaseFunc;
 import pages.HomePage;
 import pages.MenuPage;
 import requesters.TheWhiteCastleGameInformationRequester;
 
+import java.sql.SQLOutput;
 import java.util.List;
 
 public class BoardGameGeekStepDefs {
@@ -18,7 +20,8 @@ public class BoardGameGeekStepDefs {
     private HomePage homePage;
     private MenuPage menuPage;
     private List<Information> information;
-    private Information informationFromApi;
+    private List<Rating> ratings;
+    private Rating ratingFromApi;
 
     @Given("home page is opened")
     public void open_home_page() {
@@ -53,12 +56,11 @@ public class BoardGameGeekStepDefs {
         information = requester.getGameInformation();
     }
 
-    @Then ("we get the average rating of the game")
+    @Then("we get the average rating of the game")
     public void average_rating() {
-        for (Information i : information) {
-            if (){}
-        }
-
+        double averageRating = ratingFromApi.getAverage();
+        System.out.println("Average Rating" + averageRating);
     }
-
 }
+
+
