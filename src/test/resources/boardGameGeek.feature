@@ -10,4 +10,10 @@ Given home page is opened
   When we are selecting game with increasing rank
   Then  the browser navigates to the page with the description of the selected game
 
+  When we are requesting information about the game White Castle via API
+  Then we get the average rating of the game
+  And the average game rating matches the value obtained
+
+
+
 
