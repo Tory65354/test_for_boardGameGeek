@@ -39,5 +39,9 @@ public class BaseFunc {
         wait.until(ExpectedConditions.elementToBeClickable(locator)).click();
     }
 
+    public void waitForElementsCountToBeAtLeast(By locator, int minCount) {
+        wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(locator, minCount));
+    }
+
 
 }

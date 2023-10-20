@@ -12,6 +12,7 @@ public class Poll {
     @JsonProperty("totalvotes")
     private int totalVotes;
 
+    @JsonProperty("results")
     private List<Results> results;
 
     public String getName() {

@@ -19,8 +19,8 @@ public class BoardGameGeekTestsOnPages {
         Assert.assertTrue("The menu window didn't open", homePage.getWindow());
 
         MenuPage menuPage = new MenuPage(baseFunc);
-        menuPage.clickOneOfTheTopGame(3);
+        menuPage.clickOneOfTheTopGame();
 
-        Assert.assertTrue("navigation to the page of the game failed", menuPage.getGameDescription());
+       Assert.assertTrue("navigation to the page of the game failed", menuPage.getGameDescription());
     }
 }

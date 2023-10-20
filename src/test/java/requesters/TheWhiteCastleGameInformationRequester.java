@@ -15,6 +15,7 @@ public class TheWhiteCastleGameInformationRequester {
         String xml = restTemplate.getForEntity(API_URL, String.class).getBody();
 
         XmlMapper mapper = new XmlMapper();
-        return mapper.readValue(xml, new TypeReference<List<Information>>() {});
+        return mapper.readValue(xml, new TypeReference<List<Information>>() {
+        });
     }
 }

@@ -70,6 +70,7 @@ public class BoardGame {
    @JsonProperty("boardgamemechanic")
    private List<BoardGameId>  boardGameMechanic;
 
+   @JsonProperty("poll")
    private List<Poll> poll;
 
     public int getObjectId() {

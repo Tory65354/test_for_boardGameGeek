@@ -7,13 +7,13 @@ import java.util.List;
 public class Information {
 
     @JsonProperty ("boardgames")
-    private List<BoardGames> boardGames;
+    private BoardGames boardGames;
 
-    public List<BoardGames> getBoardGames() {
+    public BoardGames getBoardGames() {
         return boardGames;
     }
 
-    public void setBoardGames(List<BoardGames> boardGames) {
+    public void setBoardGames(BoardGames boardGames) {
         this.boardGames = boardGames;
     }
 }

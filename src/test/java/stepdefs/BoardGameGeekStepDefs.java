@@ -42,7 +42,7 @@ public class BoardGameGeekStepDefs {
 
     @When("we are selecting game with increasing rank")
     public void selecting_game() {
-        menuPage.clickOneOfTheTopGame(3);
+        menuPage.clickOneOfTheTopGame();
     }
 
     @Then("the browser navigates to the page with the description of the selected game")
@@ -54,13 +54,15 @@ public class BoardGameGeekStepDefs {
     public void request_the_white_castle() throws JsonProcessingException {
         TheWhiteCastleGameInformationRequester requester = new TheWhiteCastleGameInformationRequester();
         information = requester.getGameInformation();
+        System.out.println("It is work" + information);
     }
 
-    @Then("we get the average rating of the game")
-    public void average_rating() {
-        double averageRating = ratingFromApi.getAverage();
-        System.out.println("Average Rating" + averageRating);
-    }
+    //  @Then("we get the average rating of the game")
+    //  public void average_rating() {
+    //    for (Rating rating : ratings) {
+    //      if (rating.getAverage().);
+    //  }
+    // }
 }
 
 
