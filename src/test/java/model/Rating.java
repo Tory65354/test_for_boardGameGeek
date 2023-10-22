@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Rating {
 
-    @JsonProperty ("usersrated")
+    @JsonProperty("usersrated")
     public int usersRated;
 
     public double average;

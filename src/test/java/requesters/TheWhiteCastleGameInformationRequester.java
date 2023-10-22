@@ -5,6 +5,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import model.Information;
 import org.springframework.web.client.RestTemplate;
+
 import java.util.List;
 
 public class TheWhiteCastleGameInformationRequester {

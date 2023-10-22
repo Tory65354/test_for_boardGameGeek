@@ -1,6 +1,6 @@
-import io.cucumber.java.da.Men;
-import org.junit.Assert;
-import org.junit.Test;
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import pages.BaseFunc;
 import pages.HomePage;
 import pages.MenuPage;
@@ -8,7 +8,7 @@ import pages.MenuPage;
 public class BoardGameGeekTestsOnPages {
     private final String URL = "http://boardgamegeek.com/";
 
-    @Test
+   @Test
     public void selectionOfTheTopGame() {
         BaseFunc baseFunc = new BaseFunc();
         baseFunc.openUrl(URL);
@@ -16,11 +16,11 @@ public class BoardGameGeekTestsOnPages {
         HomePage homePage = new HomePage(baseFunc);
         homePage.clickMenu();
 
-        Assert.assertTrue("The menu window didn't open", homePage.getWindow());
+        Assertions.assertTrue(homePage.getWindow(), "The menu window didn't open");
 
         MenuPage menuPage = new MenuPage(baseFunc);
         menuPage.clickOneOfTheTopGame();
 
-       Assert.assertTrue("navigation to the page of the game failed", menuPage.getGameDescription());
+       Assertions.assertTrue(menuPage.getGameDescription(), "navigation to the page of the game failed");
     }
 }

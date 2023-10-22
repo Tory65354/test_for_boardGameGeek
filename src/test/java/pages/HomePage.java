@@ -16,5 +16,7 @@ public class HomePage {
         baseFunc.click(MENU_BTN);
     }
 
-    public  boolean getWindow() {return baseFunc.findElement(MENU_WINDOW).isDisplayed();}
+    public boolean getWindow() {
+        return baseFunc.findElement(MENU_WINDOW).isDisplayed();
+    }
 }
