@@ -1,4 +1,5 @@
 package stepdefs;
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -66,7 +67,7 @@ public class BoardGameGeekStepDefs {
     public void average_rating_check() {
         double averageRatingFromApi = average_rating(ratingFromApi);
         double averageRatingFromWebPage = menuPage.getAverageRating();
-        Assertions.assertEquals(averageRatingFromWebPage, averageRatingFromApi, "Average ratings don't match");
+        Assertions.assertEquals(averageRatingFromWebPage,averageRatingFromApi, "Average ratings don't match");
     }
 }
 
