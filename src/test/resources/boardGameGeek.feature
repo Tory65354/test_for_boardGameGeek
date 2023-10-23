@@ -1,7 +1,6 @@
 Feature: Selection of The Top Game
 
-  Scenario: Navigate to the page of the
-  most top game with increasing rank
+  Scenario: Navigate to the page of the most top game with increasing rank
     Given home page is opened
 
     When we click on the menu button
