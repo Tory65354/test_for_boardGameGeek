@@ -9,7 +9,7 @@ import java.util.List;
 
 public class MenuPage {
     private final By LIST_GAME = By.xpath(".//li[@class = 'hotness-item tw-relative tw-flex tw-justify-between']");
-    private final By ARROW_UP = By.xpath("//span[@_ngcontent-ng-c4027013425]//fa-icon[@_ngcontent-ng-c4027013425 and contains(@class, 'ng-fa-icon') and contains(@class, 'tw-text-base') and contains(@class, 'tw-text-green')]");
+    private final By ARROW_UP = By.xpath(".//span[@_ngcontent-ng-c4027013425]//fa-icon[@_ngcontent-ng-c4027013425 and contains(@class, 'ng-fa-icon') and contains(@class, 'tw-text-base') and contains(@class, 'tw-text-green')]");
     private final By GAME_TITLE = By.xpath(".//div[@class = 'tw-flex-1']");
     private final By GAME_DESCRIPTION = By.xpath(".//div[@class = 'game-primary ng-scope']");
     private final By AVERAGE_RATING = By.xpath(".//span[@class = 'ng-binding']");
