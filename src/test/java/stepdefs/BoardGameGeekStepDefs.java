@@ -1,11 +1,11 @@
 package stepdefs;
-
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.RestAssured;
 import io.restassured.path.xml.XmlPath;
 import io.restassured.response.Response;
+
 import org.junit.jupiter.api.Assertions;
 import pages.BaseFunc;
 import pages.HomePage;
@@ -44,30 +44,29 @@ public class BoardGameGeekStepDefs {
         Assertions.assertTrue(menuPage.getGameDescription(), "navigation to the page of the game failed");
     }
 
-    @When("we are requesting information about the game White Castle via API")
-    public void request_the_white_castle() {
-        Response response = RestAssured.get("https://boardgamegeek.com/xmlapi/game/371942?stats=1");
-        if (response.getStatusCode() != 200) {
-            System.out.println("Error" + response.getStatusCode());
-            System.out.println("Error message:" + response.getBody().asString());
-        }
-        ratingFromApi = response.getBody().asString();
-
-        System.out.println("It is work" + ratingFromApi);
-    }
+     @When("we are requesting information about the game White Castle via API")
+     public void request_the_white_castle() {
+      Response response = RestAssured.get("https://boardgamegeek.com/xmlapi/game/371942?stats=1");
+       if (response.getStatusCode() !=200){
+          System.out.println("Error" + response.getStatusCode());
+          System.out.println("Error message:" + response.getBody().asString());
+       }
+         ratingFromApi = response.getBody().asString();
+      System.out.println("It is work" + ratingFromApi);
+         }
 
     @Then("we get the average rating of the game")
     public double average_rating(String xmlResponse) {
         XmlPath xmlPath = new XmlPath(xmlResponse);
         String averageRating = xmlPath.get("boardgames.boardgame.statistics.ratings.average");
-       return Double.parseDouble(averageRating);
+        return Double.parseDouble(averageRating);
     }
 
     @Then("the average game rating matches the value obtained")
     public void average_rating_check() {
         double averageRatingFromApi = average_rating(ratingFromApi);
         double averageRatingFromWebPage = menuPage.getAverageRating();
-        Assertions.assertEquals(averageRatingFromWebPage,averageRatingFromApi, "Average ratings don't match");
+        Assertions.assertEquals(averageRatingFromWebPage, averageRatingFromApi, "Average ratings don't match");
     }
 }
 
